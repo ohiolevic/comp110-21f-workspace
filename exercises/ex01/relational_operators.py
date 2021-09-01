@@ -1,7 +1,7 @@
 """Relational Operators"""
-__author_ = "730234891"
-num: str = input("Left-hand side : ")
-num: str = input("Right-hand side : ")
+__author__ = "730234891"
+num_1: str = input("Left-hand side : ")
+num_2: str = input("Right-hand side : ")
 x = 11
 y = 5
 t1_new = bool(x) < bool(y)
@@ -14,5 +14,5 @@ t3_new = bool(x) == bool(y)
 r2 = str(t3_new)
 print("11 == 5 " + "is " + r2)
 t4_new = bool(x) != bool(y)
-r3 = str(t4_new )
+r3 = str(t4_new)
 print("11 != 5 " + "is " + r3)
