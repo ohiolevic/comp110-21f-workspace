@@ -8,9 +8,9 @@ word: str = str(input("Enter a word: "))
 
 count: int = 0
 i: int = 0 
-
-while i < (len(word) - 1):
-    if word[i] == letter:
-        count = count + 1
-    i = i + 1
-print("count: " + str(count))
+length: int = len(word)
+while count < length:
+    if word[count] == letter:
+        i = i + 1
+    count = count + 1
+print("count: " + str(i))
