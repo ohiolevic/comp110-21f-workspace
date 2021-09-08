@@ -10,9 +10,11 @@ count: int = 0
 i: int = 0 
 
 while i < len(word):
-    if ((word[i]) == letter):
-        count = count + 1 
-    
-    i = i + 1
+    if word[i] != letter:
+        i = i + 1
+    else:
+        if word[i] == letter:
+            count = count + 1
+            i = i + 1
 
     print("count: " + str(count))
