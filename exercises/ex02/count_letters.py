@@ -13,4 +13,4 @@ while count < length:
     if word[count] == letter:
         i = i + 1
     count = count + 1
-print("count: " + str(i))
+print("Count: " + str(i))
