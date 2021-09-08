@@ -3,10 +3,10 @@
 __author__ = "730234891"
 
 
-letter: str = input("what letter do you want to search for?: ")
-word: str = input("Enter a word: ")
+letter: str = str(input("what letter do you want to search for?: "))
+word: str = str(input("Enter a word: "))
 
-count = 0
+count: int = 0
 i: int = 0 
 
 while i < (len(word) - 1):
