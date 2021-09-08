@@ -1,16 +1,16 @@
-"""Numeric Operators"""
+"""Numeric Operators."""
 __author__ = "730234891"
 x: str = input("Left-hand side : ")
 y: str = input("Right-hand side : ")
 t1_new = int(x) ** int(y)
 ro = str(t1_new)
-print(x + " ** " + y + "is " + ro)
+print(x + " ** " + y + " is " + ro)
 t2_new = int(x) / int(y)
 r1 = str(t2_new)
-print(x + " / " + y + "is " + r1)
+print(x + " / " + y + " is " + r1)
 t3_new = int(x) // int(y)
 r2 = str(t3_new)
-print(x + " // " + y + "is " + r2)
+print(x + " // " + y + " is " + r2)
 t4_new = int(x) % int(y)
 r3 = str(t4_new)
-print(x + " % " + y + "is " + r3)
+print(x + " % " + y + " is " + r3)
