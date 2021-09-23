@@ -5,7 +5,7 @@ __author__ = "730234891"
 from random import randint
 
 
-def main(): 
+def main():
     global points
     global player
     global try_again
@@ -14,25 +14,26 @@ def main():
     player = str("")
     greet()
     game()
+    return None
 
 
 def greet(): 
     global player 
     player = input("what is your name? ")
     print(f"Welcome to your fortune with a coin flip journey, {player}!")
+    return None
     
 
 def game():
     global try_again
     global points
-    start_game: str = input("Let's begin, would you go heads, tails, or home? ")
-    """Enter X for Heads and Y for Tails and Z to go home"""
-    if start_game == "X":
+    start_game: str = input("Let's begin, would you go heads, tails, coin bank or home? ")
+    """Enter 1 for Heads and 2 for tails and 3 to go home"""
+    if (start_game == 1):
         heads_flip()
-    if start_game == "Y":
+    if (start_game == 2):
         tails_flip()
-        print(f"you have {points} fortune points")
-    if start_game == "Z": 
+    if (start_game == 4): 
         print(" you have gotten zero fortune point(s).")
         print("Goodbye! " + try_again)
         
@@ -50,7 +51,8 @@ def heads_flip():
             i = i + 1
             print(f"{player}, you suck!")
         print(f'you have {points} total points') 
-        home()
+        game()
+        return None
 
 
 def tails_flip():
@@ -61,8 +63,9 @@ def tails_flip():
     if i == tails: 
         points = points + 1 
     print(f"{player}, you are correct" + "\U0001f981")
-    print(f"you have {points} fortune points(s).")
-    home()
+    print(f"you have {points} total fortune points(s).")
+    game()
+    return None
 
 
 def home():
