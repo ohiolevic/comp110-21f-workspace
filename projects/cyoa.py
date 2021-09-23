@@ -4,41 +4,44 @@ __author__ = "730234891"
 
 from random import randint
 
+points: int
+player: str
 
-def main():
+
+def main() -> None:
+    """Welcome to the game of the century."""
     global points
     global player
     global try_again
-    try_again = "\U0001F917"
     points = 0 
     player = str("")
     greet()
     game()
-    return None
-
-
-def greet(): 
-    global player 
-    player = input("what is your name? ")
-    print(f"Welcome to your fortune with a coin flip journey, {player}!")
-    return None
     
 
-def game():
-    global try_again
+def greet() -> None: 
+    """Greets the player and ask for name."""
+    global player
+    player = input("what is your name? ")
+    print(f"Welcome to your fortune with a coin flip journey, {player}!")
+    
+    
+def game() -> None:
+    """Defining parameters of the game."""
     global points
     start_game: str = input("Let's begin, would you go heads, tails, coin bank or home? ")
-    """Enter 1 for Heads and 2 for tails and 3 to go home"""
-    if (start_game == 1):
+    """Enter X for Heads and Y for tails and Z to go home."""
+    if (start_game == "X"):
         heads_flip()
-    if (start_game == 2):
+    if (start_game == "Y"):
         tails_flip()
-    if (start_game == 4): 
+    if (start_game == "Z"): 
         print(" you have gotten zero fortune point(s).")
-        print("Goodbye! " + try_again)
+        print("Goodbye! " + "\U0001F917")
         
 
-def heads_flip(): 
+def heads_flip() -> None: 
+    """A game that sees how good you can guess."""
     i: int = 0 
     global player 
     global points
@@ -55,7 +58,8 @@ def heads_flip():
         return None
 
 
-def tails_flip():
+def tails_flip() -> None:
+    """How good are you in guessing in sequences."""
     global player 
     global points
     i: int = int(input(f"{player}, this is a different journey. Guess the number of coin flips: "))
@@ -66,16 +70,17 @@ def tails_flip():
     print(f"you have {points} total fortune points(s).")
     game()
     return None
+    
 
-
-def home():
+def home() -> None:
+    """End of game."""
     global player
-    """Ask if the player wants to play again. C for Yes or N for No"""
+    """Ask if the player wants to play again C for Yes or N for No."""
     answer: str = input(f"{player}, do you want play again. ")
     if answer == "C":
         game()
     if answer == "N":
-        print("Adios! " + try_again)
+        print("Adios! " + "\U0001F917")
 
 
 if __name__ == "__main__":
