@@ -1,4 +1,5 @@
-"""Choose Your Own Adventure """
+"""Choose Your Own Adventure."""
+
 __author__ = "730234891"
 
 from random import randint
@@ -20,6 +21,7 @@ def greet():
     player = input("what is your name? ")
     print(f"Welcome to your fortune with a coin flip journey, {player}!")
     
+
 def game():
     global try_again
     global points
@@ -29,7 +31,6 @@ def game():
         heads_flip()
     if start_game == "Y":
         tails_flip()
-        points = tails_flip(points, player)
         print(f"you have {points} fortune points")
     if start_game == "Z": 
         print(" you have gotten zero fortune point(s).")
@@ -55,13 +56,14 @@ def heads_flip():
 def tails_flip():
     global player 
     global points
-    i: int = int(input(f"{player}, this is a different journey. Guess the number of coin flips: "  ))
+    i: int = int(input(f"{player}, this is a different journey. Guess the number of coin flips: "))
     tails: int = randint(0, 15)
     if i == tails: 
         points = points + 1 
     print(f"{player}, you are correct" + "\U0001f981")
     print(f"you have {points} fortune points(s).")
     home()
+
 
 def home():
     global player
@@ -71,9 +73,6 @@ def home():
         game()
     if answer == "N":
         print("Adios! " + try_again)
-    
-
-
 
 
 if __name__ == "__main__":
