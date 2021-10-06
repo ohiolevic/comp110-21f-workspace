@@ -15,6 +15,7 @@ def main() -> None:
 
 
 def all(list_1: list[int], begin: int) -> bool:
+    """Get the bool True if the numbers match but False if not."""
     i: int = 0 
     if len(list_1) == 0: 
         return False
@@ -28,26 +29,29 @@ def all(list_1: list[int], begin: int) -> bool:
 
 
 def is_equal(list_1: list[int], list_2: list[int]) -> bool: 
+    """Get the bool True if the elements are equal but Flase if not."""
     a: int = 0 
-    b: int = 0
-    rolls: int = 0
+    b: int = 0 
+    rolls: int = 0 
+    if len(list_1) == 0 and len(list_2) == 0:
+        return True
+    if len(list_1) == 0 or len(list_2) == 0: 
+        return False
     while a < len(list_1):
         numbers: int = list_1[a]
         numbers_2: int = list_2[b]
-        if numbers == numbers_2:
-            rolls += 1 
-            a += 1 
-            b += 1
-            if rolls == len(list_1) or rolls == len(list_2):
-                if a == len(list_1) and b == len(list_2): 
-                    return True 
-                else:
-                    return False 
-        else: 
+        if numbers != numbers_2:
             return False
-
-
+        if len(list_1) != len(list_2): 
+            return False
+        a += 1
+        b += 1
+        rolls += 1 
+    return True
+        
+       
 def max(max_list: list[int]) -> int:
+    """Get the max integer in the list."""
     if len(max_list) == 0: 
         raise ValueError("max() arg is an empty List")
     else: 
@@ -59,6 +63,3 @@ def max(max_list: list[int]) -> int:
             i += 1
 
         return reference
-
-        
-
