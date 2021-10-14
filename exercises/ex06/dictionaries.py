@@ -7,15 +7,12 @@ __author__ = "730234891"
 
 def invert(input_one: dict[str, str]) -> dict[str, str]: 
     """Inverting the key and the value of a dictionary."""
-    input_one = dict()
-    for x in input_one.keys():
-        for y in input_one.keys():
-            if input_one[x] == input_one[y] and x != y:
-                raise KeyError("There is somthing wrong.")
-    for i in input_one.keys():
-        input_one[input_one[i]] = i 
-        input_one.pop(i)
-    return input_one
+    new_invert: dict[str, str] = {}
+    for a in input_one: 
+        if input_one[a] in new_invert: 
+            raise KeyError("There is somthing wrong")
+        new_invert[input_one[a]] = a 
+    return new_invert
 
 
 def favorite_color(input_one: dict[str, str]) -> str:
@@ -32,7 +29,7 @@ def favorite_color(input_one: dict[str, str]) -> str:
         if new_input[item] > max: 
             colour = item
             max = new_input[item]
-    print(max)
+    print(colour)
     return colour
 
 
@@ -43,6 +40,6 @@ def count(input_one: list[str]) -> dict[str, int]:
         xs[x] = 0 
     for x in xs.keys():
         for y in input_one:
-            if list(y) == x:
+            if y == x:
                 xs[x] = xs[x] + 1 
-    return xs 
+    return xs
